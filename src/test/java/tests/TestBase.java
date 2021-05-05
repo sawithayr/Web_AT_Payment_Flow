@@ -5,6 +5,7 @@ import java.util.concurrent.TimeUnit;
 import io.cucumber.testng.AbstractTestNGCucumberTests;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
+import org.openqa.selenium.chrome.ChromeOptions;
 import org.openqa.selenium.firefox.FirefoxDriver;
 import org.testng.ITestResult;
 import org.testng.annotations.AfterMethod;
@@ -15,10 +16,7 @@ import org.testng.annotations.Parameters;
 
 import utility.Helper;
 
-/**
- * @author nadia Laguidi
- *
- */
+
 public class TestBase extends AbstractTestNGCucumberTests {
 	public static WebDriver driver;
 
@@ -27,10 +25,12 @@ public class TestBase extends AbstractTestNGCucumberTests {
 	public void startDriver(@Optional("chrome") String browserName) {
 
 		if (browserName.equalsIgnoreCase("chrome")) {
-			System.setProperty("webdriver.chrome.driver", "/Users/mamikos/Documents/TestAutomationFramework-master/drivers/chromedriver");
-			driver = new ChromeDriver();
+			System.setProperty("webdriver.chrome.driver", "/Users/mamikos/Documents/Project-Witha/Witha-Automation-Test-Web/drivers/chromedriver");
+			ChromeOptions option = new ChromeOptions();
+			option.addArguments("--incognito");
+			driver = new ChromeDriver(option);
 		} else if (browserName.equalsIgnoreCase("firefox")) {
-			System.setProperty("webdriver.gecko.driver", "/Users/mamikos/Documents/TestAutomationFramework-master/drivers/geckodriver");
+			System.setProperty("webdriver.gecko.driver", "/Users/mamikos/Documents/Project-Witha/Witha-Automation-Test-Web/drivers/geckodriver");
 			driver = new FirefoxDriver();
 		}
 

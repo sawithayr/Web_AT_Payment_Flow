@@ -1,0 +1,281 @@
+[
+  {
+    "line": 3,
+    "elements": [
+      {
+        "start_timestamp": "2021-05-05T02:01:13.205Z",
+        "line": 6,
+        "name": "I want to check that the user can search, filter, booking, and cancel booking in our website.",
+        "description": "",
+        "id": "tenant---booking-and-chat-kost;i-want-to-check-that-the-user-can-search--filter--booking--and-cancel-booking-in-our-website.",
+        "type": "scenario",
+        "keyword": "Scenario",
+        "steps": [
+          {
+            "result": {
+              "duration": 6081621000,
+              "status": "passed"
+            },
+            "line": 7,
+            "name": "user navigates to mamikos homepage \"https://jambu.kerupux.com\"",
+            "match": {
+              "arguments": [
+                {
+                  "val": "\"https://jambu.kerupux.com\"",
+                  "offset": 35
+                }
+              ],
+              "location": "steps.CommonSteps.userNavigatesToMamikosHomepage(java.lang.String)"
+            },
+            "keyword": "Given "
+          },
+          {
+            "result": {
+              "duration": 3172039000,
+              "status": "passed"
+            },
+            "line": 8,
+            "name": "user clicks on Enter Button navbar",
+            "match": {
+              "location": "steps.HomepageSteps.userClicksOnEnterButtonNavbar()"
+            },
+            "keyword": "And "
+          },
+          {
+            "result": {
+              "duration": 9653356000,
+              "status": "passed"
+            },
+            "line": 9,
+            "name": "user logs in as Tenant via phone number as \"DC Automation\"",
+            "match": {
+              "arguments": [
+                {
+                  "val": "\"DC Automation\"",
+                  "offset": 43
+                }
+              ],
+              "location": "steps.LoginSteps.userLogsInAsTenantViaPhoneNumberAs(java.lang.String)"
+            },
+            "keyword": "And "
+          },
+          {
+            "result": {
+              "duration": 1176407000,
+              "status": "passed"
+            },
+            "line": 10,
+            "name": "user clicks search bar",
+            "match": {
+              "location": "steps.HomepageSteps.userClicksSearchBar()"
+            },
+            "keyword": "And "
+          },
+          {
+            "result": {
+              "duration": 10621312000,
+              "status": "passed"
+            },
+            "line": 11,
+            "name": "user fills search box with keyword \"Tobelo\" and selects matching result",
+            "match": {
+              "arguments": [
+                {
+                  "val": "\"Tobelo\"",
+                  "offset": 35
+                }
+              ],
+              "location": "steps.SearchSteps.userFillsSearchBoxWithKeywordAndSelectsMatchingResult(java.lang.String)"
+            },
+            "keyword": "And "
+          },
+          {
+            "result": {
+              "duration": 4306895000,
+              "status": "passed"
+            },
+            "line": 12,
+            "name": "user selects kost rule \"Akses 24 Jam\"",
+            "match": {
+              "arguments": [
+                {
+                  "val": "\"Akses 24 Jam\"",
+                  "offset": 23
+                }
+              ],
+              "location": "steps.KostListingSteps.userSelectsKostRule(java.lang.String)"
+            },
+            "keyword": "And "
+          },
+          {
+            "result": {
+              "duration": 3364722000,
+              "status": "passed"
+            },
+            "line": 13,
+            "name": "user selects instant filter \"Booking Langsung\"",
+            "match": {
+              "arguments": [
+                {
+                  "val": "\"Booking Langsung\"",
+                  "offset": 28
+                }
+              ],
+              "location": "steps.KostListingSteps.userSelectsInstantFilter(java.lang.String)"
+            },
+            "keyword": "And "
+          },
+          {
+            "result": {
+              "duration": 14289133000,
+              "status": "passed"
+            },
+            "line": 14,
+            "name": "user selects for kost with name \"Uplift Mamirooms 01\"",
+            "match": {
+              "arguments": [
+                {
+                  "val": "\"Uplift Mamirooms 01\"",
+                  "offset": 32
+                }
+              ],
+              "location": "steps.KostListingSteps.userSelectsForKostWithName(java.lang.String)"
+            },
+            "keyword": "Then "
+          },
+          {
+            "result": {
+              "duration": 354956000,
+              "status": "passed"
+            },
+            "line": 15,
+            "name": "user clicks on Booking button on Kost details page",
+            "match": {
+              "location": "steps.KostDetailsSteps.userClicksOnBookingButtonOnKostDetailsPage()"
+            },
+            "keyword": "When "
+          },
+          {
+            "result": {
+              "duration": 4961188000,
+              "status": "passed"
+            },
+            "line": 16,
+            "name": "user clicks Booking button on Booking form",
+            "match": {
+              "location": "steps.BookingFormSteps.userClicksBookingButtonOnBookingForm()"
+            },
+            "keyword": "And "
+          },
+          {
+            "result": {
+              "duration": 4937178000,
+              "status": "passed"
+            },
+            "line": 17,
+            "name": "user clicks chat owner kost after success booking kost",
+            "match": {
+              "location": "steps.BookingFormSteps.userClicksChatOwnerKostAfterSuccessBookingKost()"
+            },
+            "keyword": "Then "
+          },
+          {
+            "result": {
+              "duration": 3387700000,
+              "status": "passed"
+            },
+            "line": 18,
+            "name": "user sees the status chat is \"delivered\"",
+            "match": {
+              "arguments": [
+                {
+                  "val": "\"delivered\"",
+                  "offset": 29
+                }
+              ],
+              "location": "steps.ProfilePageSteps.userSeesTheStatusChatIs(java.lang.String)"
+            },
+            "keyword": "And "
+          },
+          {
+            "result": {
+              "duration": 2245578000,
+              "status": "passed"
+            },
+            "line": 19,
+            "name": "user sees booked kost with status waiting in history booking",
+            "match": {
+              "location": "steps.ProfilePageSteps.userSeesBookedKostWithStatusWaitingInHistoryBooking()"
+            },
+            "keyword": "When "
+          },
+          {
+            "result": {
+              "duration": 1143992000,
+              "status": "passed"
+            },
+            "line": 20,
+            "name": "user clicks see more button",
+            "match": {
+              "location": "steps.ProfilePageSteps.userClicksSeeMoreButton()"
+            },
+            "keyword": "And "
+          },
+          {
+            "result": {
+              "duration": 15245355000,
+              "status": "passed"
+            },
+            "line": 21,
+            "name": "user cancel the booking",
+            "match": {
+              "location": "steps.ProfilePageSteps.userCancelTheBooking()"
+            },
+            "keyword": "And "
+          },
+          {
+            "result": {
+              "duration": 2156893000,
+              "status": "passed"
+            },
+            "line": 22,
+            "name": "user sees the status turns to \"Dibatalkan\"",
+            "match": {
+              "arguments": [
+                {
+                  "val": "\"Dibatalkan\"",
+                  "offset": 30
+                }
+              ],
+              "location": "steps.ProfilePageSteps.userSeesTheStatusTurnsTo(java.lang.String)"
+            },
+            "keyword": "Then "
+          }
+        ],
+        "tags": [
+          {
+            "name": "@tenant"
+          },
+          {
+            "name": "@soalsatu"
+          }
+        ]
+      }
+    ],
+    "name": "Tenant - Booking and Chat Kost",
+    "description": "",
+    "id": "tenant---booking-and-chat-kost",
+    "keyword": "Feature",
+    "uri": "file:src/test/resources/features/SoalTenant.feature",
+    "tags": [
+      {
+        "name": "@tenant",
+        "type": "Tag",
+        "location": {
+          "line": 1,
+          "column": 1
+        }
+      }
+    ]
+  }
+]

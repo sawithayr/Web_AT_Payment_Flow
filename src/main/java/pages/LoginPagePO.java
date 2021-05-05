@@ -3,14 +3,19 @@ package pages;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
+import org.openqa.selenium.support.PageFactory;
+import org.openqa.selenium.support.pagefactory.AjaxElementLocatorFactory;
+import utilities.SeleniumHelpers;
 
-public class LoginPagePO extends PageBase {
+public class LoginPagePO extends SeleniumHelpers {
 
 	public LoginPagePO(WebDriver driver) {
 		super(driver);
+
+        PageFactory.initElements(new AjaxElementLocatorFactory(driver, 60), this);
 	}
 
-    //------------- ELEMENTS DECLARATION -------------
+    //============================== ELEMENTS DECLARATION ===============================
 
     //-------------- First Login Page --------------
     @FindBy(className = "login-user-home")
@@ -26,22 +31,14 @@ public class LoginPagePO extends PageBase {
     @FindBy(css = "button .track-login-tenant")
     private WebElement enterTenantButton;
 
-	@FindBy(id="Email")
-	WebElement emailTxtBox;
+    //-------------- Owner Login Page --------------
+    @FindBy(className = "login-owner-home")
+    private WebElement kosOwnerButton;
 
-	@FindBy(id="Password")
-	WebElement passwordTxtbox;
+    @FindBy(xpath = "//*[@class='btn btn-primary btn-mamigreen login-button track-login-owner']")
+    private WebElement enterButton;
 
-	@FindBy(css="input.button-1.login-button")
-	WebElement loginButton;
-
-	public void UserLogin(String email, String password)
-
-	{
-		setText(emailTxtBox, email, false);
-		setText(passwordTxtbox, password, false);
-		clickButton(loginButton);
-	}
+    //================================= ACTION METHOD ===================================
 
     /**
      * Login as Tenant user to application
@@ -50,13 +47,27 @@ public class LoginPagePO extends PageBase {
      * @throws InterruptedException
      */
     public void loginAsTenantToApplication(String number, String password) throws InterruptedException {
-        clickButton(tenantButton);
-        setText(phoneTextbox, number, false);
-        setText(passwordTextbox, password, false);
+        clickOn(tenantButton);
+        enterText(phoneTextbox, number, false);
+        enterText(passwordTextbox, password, false);
         hardWait(2);
-//        scrollToBottom();
         pageScrollInView(enterTenantButton);
-        clickButton(enterTenantButton);
+        clickOn(enterTenantButton);
+        hardWait(5);
+    }
+
+    /**
+     * Login as Owner to application
+     * @param phone    phone
+     * @param password password
+     * @throws InterruptedException
+     */
+    public void loginAsOwnerToApplication(String phone, String password) throws InterruptedException {
+        clickOn(kosOwnerButton);
+        enterText(phoneTextbox, phone, false);
+        enterText(passwordTextbox, password, false);
+        pageScrollInView(enterButton);
+        clickOn(enterButton);
         hardWait(5);
     }
 }

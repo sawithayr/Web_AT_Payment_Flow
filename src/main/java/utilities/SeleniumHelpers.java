@@ -7,6 +7,7 @@ import java.util.*;
 
 import org.openqa.selenium.*;
 import org.openqa.selenium.interactions.Actions;
+import org.openqa.selenium.support.PageFactory;
 import org.openqa.selenium.support.ui.ExpectedCondition;
 import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.Select;
@@ -14,18 +15,28 @@ import org.openqa.selenium.support.ui.Wait;
 import org.openqa.selenium.support.ui.WebDriverWait;
 
 public class SeleniumHelpers {
-    WebDriver driver;
-    Actions actions;
+    protected WebDriver driver;
+    public JavascriptExecutor jse;
+    public Select select;
+    public Actions actions;
 
     String os = System.getProperty("os.name").toLowerCase();
 
     public SeleniumHelpers(WebDriver driver) {
+        PageFactory.initElements(driver, this);
         this.driver = driver;
-//        actions = new Actions(driver);
+        this.jse = (JavascriptExecutor)driver;
+        this.select = select;
+        this.actions = actions;
     }
 
     //----------- Navigation ------------
 
+    /**
+     * Navigate to url address
+     *
+     * @param url address destination
+     */
     public void navigateToPage(String url) {
         driver.navigate().to(url);
     }
@@ -578,8 +589,7 @@ public class SeleniumHelpers {
 
     //Page scrolls
     public WebElement pageScrollInView(WebElement e) {
-        JavascriptExecutor jse = (JavascriptExecutor) driver;
-        jse.executeScript("arguments[0].scrollIntoView(true);", e);
+        this.jse.executeScript("arguments[0].scrollIntoView(true);", e);
         return e;
     }
 
@@ -788,7 +798,7 @@ public class SeleniumHelpers {
      */
     public void clearTextField(WebElement element) {
         if (os.contains("mac")) {
-            element.sendKeys(Keys.chord(Keys.COMMAND, "a", Keys.BACK_SPACE));
+            element.sendKeys(Keys.chord(Keys.COMMAND, "a", Keys.DELETE));
         } else {
             element.sendKeys(Keys.chord(Keys.CONTROL, "a", Keys.DELETE));
         }

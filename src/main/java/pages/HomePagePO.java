@@ -5,67 +5,21 @@ import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.interactions.Actions;
 import org.openqa.selenium.support.FindBy;
-import org.openqa.selenium.support.ui.Select;
+import org.openqa.selenium.support.PageFactory;
+import org.openqa.selenium.support.pagefactory.AjaxElementLocatorFactory;
+import utilities.SeleniumHelpers;
 
-public class HomePagePO extends PageBase {
+public class HomePagePO extends SeleniumHelpers {
 
 	public HomePagePO(WebDriver driver) {
 		super(driver);
 		jse = (JavascriptExecutor) driver;
-		action = new Actions(driver);
+		actions = new Actions(driver);
+
+        PageFactory.initElements(new AjaxElementLocatorFactory(driver, 60), this);
 	}
 
-	@FindBy(linkText = "Register")
-	WebElement registerLink;
-
-	@FindBy(linkText = "Log in")
-	WebElement loginLink;
-
-	@FindBy(linkText = "Contact us")
-	WebElement contactUsLink;
-
-	@FindBy(id = "customerCurrency")
-	WebElement currencydrl;
-
-	public void OpenRegistrationPage() {
-		clickButton(registerLink);
-	}
-
-	@FindBy(linkText="Computers")
-	WebElement ComputerMenu;
-
-	@FindBy(linkText="Notebooks")
-	WebElement NotbooksMenu;
-
-
-	public void OpenLoginPage() {
-
-		clickButton(loginLink);
-	}
-
-	public void openContactUsPage()
-
-	{
-		scrollToBottom();
-		clickButton(contactUsLink);
-	}
-
-	public void ChangeCurrency() {
-
-		select = new Select(currencydrl);
-		select.selectByIndex(1);
-	}
-	public void selectNotebooksMenu()
-	{
-		action
-		.moveToElement(ComputerMenu)
-		.moveToElement(NotbooksMenu)
-		.click()
-		.build()
-		.perform();
-	}
-
-    //------------- ELEMENTS DECLARATION -------------
+    //============================== ELEMENTS DECLARATION ===============================
 
     //-------------- Navbar -------------
     @FindBy(className = "nav-login-button")
@@ -79,7 +33,7 @@ public class HomePagePO extends PageBase {
     private WebElement searchBar;
 
 
-    //--------------- ACTION METHOD ----------------
+    //================================= ACTION METHOD ===================================
 
     /**
      * Click on Login button
@@ -87,11 +41,21 @@ public class HomePagePO extends PageBase {
      * @throws InterruptedException
      */
     public void clickLoginButtonNavbar() throws InterruptedException {
-        if (enterButton.isDisplayed()) {
-            clickButton(enterButton);
+        if (waitTillElementIsVisible(enterButton,3) != null) {
+            clickOn(enterButton);
             hardWait(2);
         } else {
-            clickButton(theEnterButton);
+            clickOn(theEnterButton);
         }
+    }
+
+    /**
+     * Click on 'Search' bar
+     *
+     * @throws InterruptedException
+     */
+    public void clickSearchBar() throws InterruptedException {
+        waitTillElementIsVisible(searchBar);
+        clickOn(searchBar);
     }
 }

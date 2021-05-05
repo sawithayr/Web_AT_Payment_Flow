@@ -12,4 +12,10 @@ public class HomepageSteps extends TestBase {
     public void userClicksOnEnterButtonNavbar() throws InterruptedException {
         homepage.clickLoginButtonNavbar();
     }
+
+    @And("user clicks search bar")
+    public void userClicksSearchBar() throws InterruptedException {
+        homepage.clickSearchBar();
+    }
+
 }
