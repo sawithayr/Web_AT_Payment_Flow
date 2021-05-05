@@ -184,6 +184,8 @@ public class OwnerAddContractPO extends SeleniumHelpers {
 
     /**
      * Check if first kos present
+     *
+     * @return true / false
      */
     public boolean isSelectsPropertyPresent() {
         return waitInCaseElementVisible(kostFirstOption, 5) != null;
@@ -219,6 +221,7 @@ public class OwnerAddContractPO extends SeleniumHelpers {
 
     /**
      * Check form input tenant name is present
+     * @return true / false
      */
     public boolean isFormInputTenantNamePresent() {
         return waitInCaseElementVisible(tenantNameForm, 10) != null;
@@ -395,6 +398,31 @@ public class OwnerAddContractPO extends SeleniumHelpers {
     }
 
     /**
+     * Sum mainPrice, cost1, cost2
+     *
+     * @return int total price
+     */
+    public int sumAllCost() {
+        int mainPrice = Integer.parseInt(getMainPrice());
+        int cost1 = Integer.parseInt(getAdditionalPrice1());
+        int cost2 = Integer.parseInt(getAdditionalPrice2());
+        int additionalCost = Integer.sum(cost1, cost2);
+        return Integer.sum(mainPrice, additionalCost);
+    }
+
+    /**
+     * Get total price, remove char [R, p, .]
+     *
+     * @return int total price
+     */
+    public int getTotalCost() {
+        pageScrollInView(totalPrice);
+        String price = getText(totalPrice);
+        price = price.replaceAll("[Rp.]", "");
+        return Integer.parseInt(price);
+    }
+
+    /**
      * Click save tenant contract
      *
      * @throws InterruptedException
@@ -440,7 +468,7 @@ public class OwnerAddContractPO extends SeleniumHelpers {
      */
     public void clickTerminateContractButton() throws InterruptedException {
         pageScrollInView(terminateContractButton);
-        waitInCaseElementVisible(terminateContractButton, 2);
+        hardWait(3);
         clickOn(terminateContractButton);
     }
 
@@ -469,4 +497,5 @@ public class OwnerAddContractPO extends SeleniumHelpers {
         waitInCaseElementVisible(stopContractDesc, 3);
         return getText(stopContractDesc);
     }
+
 }

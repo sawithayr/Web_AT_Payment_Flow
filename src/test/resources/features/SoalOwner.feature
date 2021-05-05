@@ -1,4 +1,4 @@
-@owner
+@regression @owner
 
 Feature: Owner - Add contract tenant
 
@@ -12,13 +12,13 @@ Feature: Owner - Add contract tenant
     And user selects option Add Tenant Contract by owner
     And user selects kost and inputs the tenant info with phone number "<phone>", room number "<room>" and name "<name>"
     And user inputs the payment info with price and "<duration>" month
-    And user inputs the late charge "<penalty>" "<deadline>", and additonal charge "<type>" "<amount>" and "<type2>" "<amount2>"
-    Then verify all data "<phone>", "<room>", "<name>", "<price>", "<type>", "<amount>", "<type2>", "<amount2>"
+    And user inputs the late charge "<penalty>" "<deadline>", and additonal charge "<item1>" "<cost1>" and "<item2>" "<cost2>"
+    Then verify all data "<phone>", "<room>", "<name>", "<price>", "<item1>", "<cost1>", "<item2>", "<cost2>"
     When user sees success save data
     And user clicks link to navigate to Detail Tenant page
     And user terminates the tenant contract
     Then user sees description of stop tenant contract "Penyewa telah selesai mengakhiri kontrak sewa kos"
 
     Examples:
-      | phone        | room             | name            | price    | duration | penalty | deadline | type   | amount | type2      | amount2 |
-      | 083843666866 | Kamar 3 Lantai 1 | Test Automation | 10000000 | 1        | 100000  | 5        | Parkir | 50000  | Kebersihan | 100000  |
+      | phone        | room             | name            | price    | duration | penalty | deadline | item1  | cost1 | item2      | cost2  |
+      | 083843666866 | Kamar 3 Lantai 1 | Test Automation | 10000000 | 1        | 100000  | 5        | Parkir | 50000 | Kebersihan | 100000 |

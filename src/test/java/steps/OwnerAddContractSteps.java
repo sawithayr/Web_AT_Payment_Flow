@@ -35,21 +35,22 @@ public class OwnerAddContractSteps extends TestBase {
     }
 
     @And("user inputs the late charge {string} {string}, and additonal charge {string} {string} and {string} {string}")
-    public void userInputsTheLateChargeAndAdditonalChargeAnd(String penalty, String deadline, String type1, String amount1, String type2, String amount2) throws InterruptedException {
+    public void userInputsTheLateChargeAndAdditonalChargeAnd(String penalty, String deadline, String item1, String cost1, String item2, String cost2) throws InterruptedException {
         addContract.inputLateChargeCost(penalty, deadline);
-        addContract.inputAdditionalCost(type1, amount1, type2, amount2);
+        addContract.inputAdditionalCost(item1, cost1, item2, cost2);
     }
 
     @Then("verify all data {string}, {string}, {string}, {string}, {string}, {string}, {string}, {string}")
-    public void verifyAllData(String phone, String room, String name, String price, String type, String amount, String type2, String amount2) {
+    public void verifyAllData(String phone, String room, String name, String price, String item1, String cost1, String item2, String cost2) {
         Assert.assertEquals(addContract.getTenantName(), name, "Tenant Name is NOT equals!");
         Assert.assertEquals(addContract.getTenantRoom(), room, "Tenant Room is NOT equals!");
         Assert.assertEquals(addContract.getTenantNumber(), phone, "Tenant Phone Number is NOT equals!");
         Assert.assertEquals(addContract.getMainPrice(), price, "Main Price is NOT equals!");
-        Assert.assertEquals(addContract.getAdditionalItem1(), type, "Additional Type1 is NOT equals!");
-        Assert.assertEquals(addContract.getAdditionalItem2(), type2, "Additional Type2 is NOT equals!");
-        Assert.assertEquals(addContract.getAdditionalPrice1(), amount, "Additional price1  is NOT equals!");
-        Assert.assertEquals(addContract.getAdditionalPrice2(), amount2, "Additional price2  is NOT equals!");
+        Assert.assertEquals(addContract.getAdditionalItem1(), item1, "Additional item1 is NOT equals!");
+        Assert.assertEquals(addContract.getAdditionalItem2(), item2, "Additional item2 is NOT equals!");
+        Assert.assertEquals(addContract.getAdditionalPrice1(), cost1, "Additional price1  is NOT equals!");
+        Assert.assertEquals(addContract.getAdditionalPrice2(), cost2, "Additional price2  is NOT equals!");
+        Assert.assertEquals(addContract.getTotalCost(), addContract.sumAllCost(), "Total Price is not equals!");
     }
 
     @When("user sees success save data")

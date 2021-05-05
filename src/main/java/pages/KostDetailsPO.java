@@ -53,6 +53,7 @@ public class KostDetailsPO extends SeleniumHelpers {
 
     /**
      * @return true if TFUE present, otherwise false.
+     * @return true / false
      * @throws InterruptedException
      */
     public Boolean isFTUE_screenPresent() {

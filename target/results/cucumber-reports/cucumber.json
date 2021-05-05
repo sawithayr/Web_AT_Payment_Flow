@@ -3,7 +3,7 @@
     "line": 3,
     "elements": [
       {
-        "start_timestamp": "2021-05-05T02:01:13.205Z",
+        "start_timestamp": "2021-05-05T03:39:17.843Z",
         "line": 6,
         "name": "I want to check that the user can search, filter, booking, and cancel booking in our website.",
         "description": "",
@@ -13,7 +13,7 @@
         "steps": [
           {
             "result": {
-              "duration": 6081621000,
+              "duration": 7602342000,
               "status": "passed"
             },
             "line": 7,
@@ -31,7 +31,7 @@
           },
           {
             "result": {
-              "duration": 3172039000,
+              "duration": 3271619000,
               "status": "passed"
             },
             "line": 8,
@@ -43,7 +43,7 @@
           },
           {
             "result": {
-              "duration": 9653356000,
+              "duration": 9785517000,
               "status": "passed"
             },
             "line": 9,
@@ -61,7 +61,7 @@
           },
           {
             "result": {
-              "duration": 1176407000,
+              "duration": 1197430000,
               "status": "passed"
             },
             "line": 10,
@@ -73,7 +73,7 @@
           },
           {
             "result": {
-              "duration": 10621312000,
+              "duration": 11263560000,
               "status": "passed"
             },
             "line": 11,
@@ -91,7 +91,7 @@
           },
           {
             "result": {
-              "duration": 4306895000,
+              "duration": 4297220000,
               "status": "passed"
             },
             "line": 12,
@@ -109,7 +109,7 @@
           },
           {
             "result": {
-              "duration": 3364722000,
+              "duration": 3362044000,
               "status": "passed"
             },
             "line": 13,
@@ -127,7 +127,7 @@
           },
           {
             "result": {
-              "duration": 14289133000,
+              "duration": 14193878000,
               "status": "passed"
             },
             "line": 14,
@@ -145,7 +145,7 @@
           },
           {
             "result": {
-              "duration": 354956000,
+              "duration": 358103000,
               "status": "passed"
             },
             "line": 15,
@@ -157,7 +157,7 @@
           },
           {
             "result": {
-              "duration": 4961188000,
+              "duration": 4738144000,
               "status": "passed"
             },
             "line": 16,
@@ -169,7 +169,7 @@
           },
           {
             "result": {
-              "duration": 4937178000,
+              "duration": 10927527000,
               "status": "passed"
             },
             "line": 17,
@@ -181,7 +181,7 @@
           },
           {
             "result": {
-              "duration": 3387700000,
+              "duration": 3111738000,
               "status": "passed"
             },
             "line": 18,
@@ -199,7 +199,7 @@
           },
           {
             "result": {
-              "duration": 2245578000,
+              "duration": 2261996000,
               "status": "passed"
             },
             "line": 19,
@@ -211,7 +211,7 @@
           },
           {
             "result": {
-              "duration": 1143992000,
+              "duration": 1150049000,
               "status": "passed"
             },
             "line": 20,
@@ -223,7 +223,7 @@
           },
           {
             "result": {
-              "duration": 15245355000,
+              "duration": 23498746000,
               "status": "passed"
             },
             "line": 21,
@@ -235,7 +235,7 @@
           },
           {
             "result": {
-              "duration": 2156893000,
+              "duration": 1391333000,
               "status": "passed"
             },
             "line": 22,
@@ -254,6 +254,9 @@
         ],
         "tags": [
           {
+            "name": "@regression"
+          },
+          {
             "name": "@tenant"
           },
           {
@@ -269,11 +272,19 @@
     "uri": "file:src/test/resources/features/SoalTenant.feature",
     "tags": [
       {
-        "name": "@tenant",
+        "name": "@regression",
         "type": "Tag",
         "location": {
           "line": 1,
           "column": 1
+        }
+      },
+      {
+        "name": "@tenant",
+        "type": "Tag",
+        "location": {
+          "line": 1,
+          "column": 13
         }
       }
     ]

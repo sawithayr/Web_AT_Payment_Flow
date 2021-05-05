@@ -1,4 +1,4 @@
-@tenant
+@regression @tenant
 
 Feature: Tenant - Booking and Chat Kost
 
