@@ -7,7 +7,7 @@ import tests.TestBase;
         plugin = {"pretty", "html:target/results/cucumber-reports/cucumber.html", "json:target/results/cucumber-reports/cucumber.json"},
         features = {"src/test/resources/features"},
         glue = {"steps"},
-        tags = "@soalsatu"
+        tags = "@regression"
 )
 
 public class TestRunner extends TestBase {

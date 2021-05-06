@@ -29,6 +29,8 @@ public class KostListingPO extends SeleniumHelpers {
     @FindBy(css = "button[data-path='btn_popperAction']")
     private WebElement popUpConfirmationbutton;
 
+    private By popUpConfirmationbutton2 = By.cssSelector("button[data-path='btn_popperAction']");
+
     //-------------- Instant Filter -------------
     @FindBy(xpath = "//div[@id='baseMainFilter'][3]//button[@class='base-filter-button']")
     private WebElement kosRuleFilter;
@@ -45,6 +47,14 @@ public class KostListingPO extends SeleniumHelpers {
 
     //================================= ACTION METHOD ===================================
 
+
+    /**
+     * @return true if FTUE present, otherwise false.
+     */
+    public boolean isFTUE_screenPresent() {
+        return waitInCaseElementPresent(popUpConfirmationbutton2, 5) != null;
+    }
+
     /**
      * Will check First Time User Experience screen first. And then will click on close button on FTUE if present in the screen.
      * Dismiss FTUE first time user experience by click on close button if present.
@@ -52,9 +62,13 @@ public class KostListingPO extends SeleniumHelpers {
      * @throws InterruptedException
      */
     public void closeFTUEKosListingPopUp() throws InterruptedException {
-        if (waitInCaseElementVisible(popUpConfirmationbutton, 3) != null) {
-            clickOn(popUpConfirmationbutton);
-            clickOn(popUpConfirmationbutton);
+        waitInCaseElementVisible(FTUETitleText, 10);
+        while (isFTUE_screenPresent()) {
+            if (waitInCaseElementVisible(popUpConfirmationbutton, 3) != null) {
+                clickOn(popUpConfirmationbutton);
+            } else {
+                break;
+            }
         }
     }
 

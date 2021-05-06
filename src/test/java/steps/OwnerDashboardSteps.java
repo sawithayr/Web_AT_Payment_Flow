@@ -2,14 +2,12 @@ package steps;
 
 import io.cucumber.java.en.And;
 import org.testng.Assert;
-import pages.OwnerAddContractPO;
 import pages.OwnerDashboardPO;
 import tests.TestBase;
 
 public class OwnerDashboardSteps extends TestBase {
 
     private OwnerDashboardPO ownerDashboard = new OwnerDashboardPO(driver);
-    private OwnerAddContractPO addContract = new OwnerAddContractPO(driver);
 
     @And("user sees owner dashboard page")
     public void userSeesOwnerDashboardPage() {
