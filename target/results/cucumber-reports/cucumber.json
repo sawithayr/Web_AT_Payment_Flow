@@ -3,288 +3,414 @@
     "line": 3,
     "elements": [
       {
-        "start_timestamp": "2021-05-05T03:39:17.843Z",
-        "line": 6,
-        "name": "I want to check that the user can search, filter, booking, and cancel booking in our website.",
+        "start_timestamp": "2021-05-16T12:22:13.051Z",
+        "line": 21,
+        "name": "I want to check successful payment flow for purchasing Pillow using Credit Card as payment method.",
         "description": "",
-        "id": "tenant---booking-and-chat-kost;i-want-to-check-that-the-user-can-search--filter--booking--and-cancel-booking-in-our-website.",
+        "id": "midtrans-payment-flow;i-want-to-check-\u003cstatus\u003e-payment-flow-for-purchasing-pillow-using-credit-card-as-payment-method.;;2",
         "type": "scenario",
-        "keyword": "Scenario",
+        "keyword": "Scenario Outline",
         "steps": [
           {
             "result": {
-              "duration": 7602342000,
+              "duration": 1569574000,
               "status": "passed"
             },
-            "line": 7,
-            "name": "user navigates to mamikos homepage \"https://jambu.kerupux.com\"",
+            "line": 6,
+            "name": "user navigates to homepage \"https://demo.midtrans.com\"",
             "match": {
               "arguments": [
                 {
-                  "val": "\"https://jambu.kerupux.com\"",
-                  "offset": 35
+                  "val": "\"https://demo.midtrans.com\"",
+                  "offset": 27
                 }
               ],
-              "location": "steps.CommonSteps.userNavigatesToMamikosHomepage(java.lang.String)"
+              "location": "steps.CommonSteps.userNavigatesToHomepage(java.lang.String)"
             },
             "keyword": "Given "
           },
           {
             "result": {
-              "duration": 3271619000,
+              "duration": 1183184000,
+              "status": "passed"
+            },
+            "line": 7,
+            "name": "user clicks BUY NOW button",
+            "match": {
+              "location": "steps.HomepageSteps.userClicksBUYNOWButton()"
+            },
+            "keyword": "When "
+          },
+          {
+            "result": {
+              "duration": 177583000,
               "status": "passed"
             },
             "line": 8,
-            "name": "user clicks on Enter Button navbar",
+            "name": "user validates Customer Details",
             "match": {
-              "location": "steps.HomepageSteps.userClicksOnEnterButtonNavbar()"
+              "location": "steps.HomepageSteps.userValidatesCustomerDetails()"
             },
-            "keyword": "And "
+            "keyword": "Then "
           },
           {
             "result": {
-              "duration": 9785517000,
+              "duration": 4292520000,
               "status": "passed"
             },
             "line": 9,
-            "name": "user logs in as Tenant via phone number as \"DC Automation\"",
+            "name": "user validates total price similar on order summary",
             "match": {
-              "arguments": [
-                {
-                  "val": "\"DC Automation\"",
-                  "offset": 43
-                }
-              ],
-              "location": "steps.LoginSteps.userLogsInAsTenantViaPhoneNumberAs(java.lang.String)"
+              "location": "steps.HomepageSteps.userValidatesTotalPriceSimilarOnOrderSummary()"
             },
             "keyword": "And "
           },
           {
             "result": {
-              "duration": 1197430000,
+              "duration": 1191925000,
               "status": "passed"
             },
             "line": 10,
-            "name": "user clicks search bar",
+            "name": "user validates shipping details on order summary",
             "match": {
-              "location": "steps.HomepageSteps.userClicksSearchBar()"
+              "location": "steps.HomepageSteps.userValidatesShippingDetailsOnOrderSummary()"
             },
             "keyword": "And "
           },
           {
             "result": {
-              "duration": 11263560000,
+              "duration": 6144091000,
               "status": "passed"
             },
             "line": 11,
-            "name": "user fills search box with keyword \"Tobelo\" and selects matching result",
+            "name": "user clicks CONTINUE button",
             "match": {
-              "arguments": [
-                {
-                  "val": "\"Tobelo\"",
-                  "offset": 35
-                }
-              ],
-              "location": "steps.SearchSteps.userFillsSearchBoxWithKeywordAndSelectsMatchingResult(java.lang.String)"
+              "location": "steps.HomepageSteps.userClicksCONTINUEButton()"
             },
-            "keyword": "And "
+            "keyword": "When "
           },
           {
             "result": {
-              "duration": 4297220000,
+              "duration": 3170690000,
               "status": "passed"
             },
             "line": 12,
-            "name": "user selects kost rule \"Akses 24 Jam\"",
+            "name": "user selects Credits or Debit Card payment method",
             "match": {
-              "arguments": [
-                {
-                  "val": "\"Akses 24 Jam\"",
-                  "offset": 23
-                }
-              ],
-              "location": "steps.KostListingSteps.userSelectsKostRule(java.lang.String)"
+              "location": "steps.HomepageSteps.userSelectsCreditsDebitCardPaymentMethod()"
             },
             "keyword": "And "
           },
           {
             "result": {
-              "duration": 3362044000,
+              "duration": 455807000,
               "status": "passed"
             },
             "line": 13,
-            "name": "user selects instant filter \"Booking Langsung\"",
+            "name": "user inputs card number \"4811 1111 1111 1114\", \"12/24\", and \"123\"",
             "match": {
               "arguments": [
                 {
-                  "val": "\"Booking Langsung\"",
-                  "offset": 28
+                  "val": "\"4811 1111 1111 1114\"",
+                  "offset": 24
+                },
+                {
+                  "val": "\"12/24\"",
+                  "offset": 47
+                },
+                {
+                  "val": "\"123\"",
+                  "offset": 60
                 }
               ],
-              "location": "steps.KostListingSteps.userSelectsInstantFilter(java.lang.String)"
+              "location": "steps.HomepageSteps.userInputsCardNumberAnd(java.lang.String,java.lang.String,java.lang.String)"
             },
             "keyword": "And "
           },
           {
             "result": {
-              "duration": 14193878000,
+              "duration": 8552351000,
               "status": "passed"
             },
             "line": 14,
-            "name": "user selects for kost with name \"Uplift Mamirooms 01\"",
+            "name": "user validates total amount and \"Promo 10 Rupiah\" selected is matching",
             "match": {
               "arguments": [
                 {
-                  "val": "\"Uplift Mamirooms 01\"",
+                  "val": "\"Promo 10 Rupiah\"",
                   "offset": 32
                 }
               ],
-              "location": "steps.KostListingSteps.userSelectsForKostWithName(java.lang.String)"
+              "location": "steps.HomepageSteps.userValidatesTotalAmountAndSelectedIsMatching(java.lang.String)"
             },
             "keyword": "Then "
           },
           {
             "result": {
-              "duration": 358103000,
+              "duration": 2106321000,
               "status": "passed"
             },
             "line": 15,
-            "name": "user clicks on Booking button on Kost details page",
+            "name": "user validates amount and inputs \"112233\"",
             "match": {
-              "location": "steps.KostDetailsSteps.userClicksOnBookingButtonOnKostDetailsPage()"
+              "arguments": [
+                {
+                  "val": "\"112233\"",
+                  "offset": 33
+                }
+              ],
+              "location": "steps.HomepageSteps.userValidatesAmountAndInputs(java.lang.String)"
             },
-            "keyword": "When "
+            "keyword": "And "
           },
           {
             "result": {
-              "duration": 4738144000,
+              "duration": 4376794000,
               "status": "passed"
             },
             "line": 16,
-            "name": "user clicks Booking button on Booking form",
+            "name": "user clicks OK button",
             "match": {
-              "location": "steps.BookingFormSteps.userClicksBookingButtonOnBookingForm()"
-            },
-            "keyword": "And "
-          },
-          {
-            "result": {
-              "duration": 10927527000,
-              "status": "passed"
-            },
-            "line": 17,
-            "name": "user clicks chat owner kost after success booking kost",
-            "match": {
-              "location": "steps.BookingFormSteps.userClicksChatOwnerKostAfterSuccessBookingKost()"
-            },
-            "keyword": "Then "
-          },
-          {
-            "result": {
-              "duration": 3111738000,
-              "status": "passed"
-            },
-            "line": 18,
-            "name": "user sees the status chat is \"delivered\"",
-            "match": {
-              "arguments": [
-                {
-                  "val": "\"delivered\"",
-                  "offset": 29
-                }
-              ],
-              "location": "steps.ProfilePageSteps.userSeesTheStatusChatIs(java.lang.String)"
-            },
-            "keyword": "And "
-          },
-          {
-            "result": {
-              "duration": 2261996000,
-              "status": "passed"
-            },
-            "line": 19,
-            "name": "user sees booked kost with status waiting in history booking",
-            "match": {
-              "location": "steps.ProfilePageSteps.userSeesBookedKostWithStatusWaitingInHistoryBooking()"
+              "location": "steps.HomepageSteps.userClicksOKButton()"
             },
             "keyword": "When "
           },
           {
             "result": {
-              "duration": 1150049000,
+              "duration": 46576000,
               "status": "passed"
             },
-            "line": 20,
-            "name": "user clicks see more button",
-            "match": {
-              "location": "steps.ProfilePageSteps.userClicksSeeMoreButton()"
-            },
-            "keyword": "And "
-          },
-          {
-            "result": {
-              "duration": 23498746000,
-              "status": "passed"
-            },
-            "line": 21,
-            "name": "user cancel the booking",
-            "match": {
-              "location": "steps.ProfilePageSteps.userCancelTheBooking()"
-            },
-            "keyword": "And "
-          },
-          {
-            "result": {
-              "duration": 1391333000,
-              "status": "passed"
-            },
-            "line": 22,
-            "name": "user sees the status turns to \"Dibatalkan\"",
+            "line": 17,
+            "name": "user sees total amount with \"successful\" message",
             "match": {
               "arguments": [
                 {
-                  "val": "\"Dibatalkan\"",
-                  "offset": 30
+                  "val": "\"successful\"",
+                  "offset": 28
                 }
               ],
-              "location": "steps.ProfilePageSteps.userSeesTheStatusTurnsTo(java.lang.String)"
+              "location": "steps.HomepageSteps.userSeesTotalAmountWithStatusMessage(java.lang.String)"
             },
             "keyword": "Then "
           }
         ],
         "tags": [
           {
-            "name": "@regression"
+            "name": "@midtrans"
+          }
+        ]
+      },
+      {
+        "start_timestamp": "2021-05-16T12:22:47.889Z",
+        "line": 22,
+        "name": "I want to check failed payment flow for purchasing Pillow using Credit Card as payment method.",
+        "description": "",
+        "id": "midtrans-payment-flow;i-want-to-check-\u003cstatus\u003e-payment-flow-for-purchasing-pillow-using-credit-card-as-payment-method.;;3",
+        "type": "scenario",
+        "keyword": "Scenario Outline",
+        "steps": [
+          {
+            "result": {
+              "duration": 1308117000,
+              "status": "passed"
+            },
+            "line": 6,
+            "name": "user navigates to homepage \"https://demo.midtrans.com\"",
+            "match": {
+              "arguments": [
+                {
+                  "val": "\"https://demo.midtrans.com\"",
+                  "offset": 27
+                }
+              ],
+              "location": "steps.CommonSteps.userNavigatesToHomepage(java.lang.String)"
+            },
+            "keyword": "Given "
           },
           {
-            "name": "@tenant"
+            "result": {
+              "duration": 1133925000,
+              "status": "passed"
+            },
+            "line": 7,
+            "name": "user clicks BUY NOW button",
+            "match": {
+              "location": "steps.HomepageSteps.userClicksBUYNOWButton()"
+            },
+            "keyword": "When "
           },
           {
-            "name": "@soalsatu"
+            "result": {
+              "duration": 150650000,
+              "status": "passed"
+            },
+            "line": 8,
+            "name": "user validates Customer Details",
+            "match": {
+              "location": "steps.HomepageSteps.userValidatesCustomerDetails()"
+            },
+            "keyword": "Then "
+          },
+          {
+            "result": {
+              "duration": 4278866000,
+              "status": "passed"
+            },
+            "line": 9,
+            "name": "user validates total price similar on order summary",
+            "match": {
+              "location": "steps.HomepageSteps.userValidatesTotalPriceSimilarOnOrderSummary()"
+            },
+            "keyword": "And "
+          },
+          {
+            "result": {
+              "duration": 1188541000,
+              "status": "passed"
+            },
+            "line": 10,
+            "name": "user validates shipping details on order summary",
+            "match": {
+              "location": "steps.HomepageSteps.userValidatesShippingDetailsOnOrderSummary()"
+            },
+            "keyword": "And "
+          },
+          {
+            "result": {
+              "duration": 6144304000,
+              "status": "passed"
+            },
+            "line": 11,
+            "name": "user clicks CONTINUE button",
+            "match": {
+              "location": "steps.HomepageSteps.userClicksCONTINUEButton()"
+            },
+            "keyword": "When "
+          },
+          {
+            "result": {
+              "duration": 3168286000,
+              "status": "passed"
+            },
+            "line": 12,
+            "name": "user selects Credits or Debit Card payment method",
+            "match": {
+              "location": "steps.HomepageSteps.userSelectsCreditsDebitCardPaymentMethod()"
+            },
+            "keyword": "And "
+          },
+          {
+            "result": {
+              "duration": 462088000,
+              "status": "passed"
+            },
+            "line": 13,
+            "name": "user inputs card number \"4911 1111 1111 1113\", \"02/22\", and \"123\"",
+            "match": {
+              "arguments": [
+                {
+                  "val": "\"4911 1111 1111 1113\"",
+                  "offset": 24
+                },
+                {
+                  "val": "\"02/22\"",
+                  "offset": 47
+                },
+                {
+                  "val": "\"123\"",
+                  "offset": 60
+                }
+              ],
+              "location": "steps.HomepageSteps.userInputsCardNumberAnd(java.lang.String,java.lang.String,java.lang.String)"
+            },
+            "keyword": "And "
+          },
+          {
+            "result": {
+              "duration": 8507190000,
+              "status": "passed"
+            },
+            "line": 14,
+            "name": "user validates total amount and \"Potongan 10% - Demo Promo Engine\" selected is matching",
+            "match": {
+              "arguments": [
+                {
+                  "val": "\"Potongan 10% - Demo Promo Engine\"",
+                  "offset": 32
+                }
+              ],
+              "location": "steps.HomepageSteps.userValidatesTotalAmountAndSelectedIsMatching(java.lang.String)"
+            },
+            "keyword": "Then "
+          },
+          {
+            "result": {
+              "duration": 2109526000,
+              "status": "passed"
+            },
+            "line": 15,
+            "name": "user validates amount and inputs \"112233\"",
+            "match": {
+              "arguments": [
+                {
+                  "val": "\"112233\"",
+                  "offset": 33
+                }
+              ],
+              "location": "steps.HomepageSteps.userValidatesAmountAndInputs(java.lang.String)"
+            },
+            "keyword": "And "
+          },
+          {
+            "result": {
+              "duration": 4029666000,
+              "status": "passed"
+            },
+            "line": 16,
+            "name": "user clicks OK button",
+            "match": {
+              "location": "steps.HomepageSteps.userClicksOKButton()"
+            },
+            "keyword": "When "
+          },
+          {
+            "result": {
+              "duration": 40294000,
+              "status": "passed"
+            },
+            "line": 17,
+            "name": "user sees total amount with \"failed\" message",
+            "match": {
+              "arguments": [
+                {
+                  "val": "\"failed\"",
+                  "offset": 28
+                }
+              ],
+              "location": "steps.HomepageSteps.userSeesTotalAmountWithStatusMessage(java.lang.String)"
+            },
+            "keyword": "Then "
+          }
+        ],
+        "tags": [
+          {
+            "name": "@midtrans"
           }
         ]
       }
     ],
-    "name": "Tenant - Booking and Chat Kost",
+    "name": "Midtrans payment flow",
     "description": "",
-    "id": "tenant---booking-and-chat-kost",
+    "id": "midtrans-payment-flow",
     "keyword": "Feature",
-    "uri": "file:src/test/resources/features/SoalTenant.feature",
+    "uri": "file:src/test/resources/features/DemoMidtrans.feature",
     "tags": [
       {
-        "name": "@regression",
+        "name": "@midtrans",
         "type": "Tag",
         "location": {
           "line": 1,
           "column": 1
-        }
-      },
-      {
-        "name": "@tenant",
-        "type": "Tag",
-        "location": {
-          "line": 1,
-          "column": 13
         }
       }
     ]

@@ -13,4 +13,10 @@ public class CommonSteps extends TestBase {
         selenium = new SeleniumHelpers(driver);
         selenium.navigateToPage(url);
     }
+
+    @Given("user navigates to homepage {string}")
+    public void userNavigatesToHomepage(String url) {
+        selenium = new SeleniumHelpers(driver);
+        selenium.navigateToPage(url);
+    }
 }
