@@ -41,6 +41,7 @@ public class HomepageSteps extends TestBase {
     @And("user validates shipping details on order summary")
     public void userValidatesShippingDetailsOnOrderSummary() throws InterruptedException {
         homepage.clickShippingDetailsButton();
+//        homepage.clickShippingDetailsButton();
         Assert.assertTrue(homepage.isValueElementTrue(name), "Element name is not equals with " + name + "!");
         Assert.assertTrue(homepage.isValueElementTrue(email), "Element email is not equals with " + email + "!");
         Assert.assertTrue(homepage.isValueElementTrue(phoneIndo), "Element email is not equals with " + email + "!");
