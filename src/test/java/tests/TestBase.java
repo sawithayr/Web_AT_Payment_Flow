@@ -18,12 +18,12 @@ public class TestBase extends AbstractTestNGCucumberTests {
 	public void startDriver(@Optional("chrome") String browserName) {
 
 		if (browserName.equalsIgnoreCase("chrome")) {
-			System.setProperty("webdriver.chrome.driver", "/Users/mamikos/Documents/Project-Witha/Witha-Automation-Test-Web/drivers/chromedriver");
+			System.setProperty("webdriver.chrome.driver", "drivers/chromedriver");
 			ChromeOptions option = new ChromeOptions();
 			option.addArguments("--incognito");
 			driver = new ChromeDriver(option);
 		} else if (browserName.equalsIgnoreCase("firefox")) {
-			System.setProperty("webdriver.gecko.driver", "/Users/mamikos/Documents/Project-Witha/Witha-Automation-Test-Web/drivers/geckodriver");
+			System.setProperty("webdriver.gecko.driver", "drivers/geckodriver");
 			driver = new FirefoxDriver();
 		}
 
