@@ -268,7 +268,7 @@ public class HomePagePO extends SeleniumHelpers {
      */
     public void clickContinueButton() throws InterruptedException {
         clickOn(continueButton);
-        hardWait(5);
+        hardWait(20);
     }
 
     /**
